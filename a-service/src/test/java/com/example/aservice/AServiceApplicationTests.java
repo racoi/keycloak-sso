@@ -1,13 +1,13 @@
-package com.example.keycloak_sso;
+package com.example.aservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KeycloakSsoApplicationTests {
+class AServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
