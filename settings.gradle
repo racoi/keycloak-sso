@@ -1,1 +1,4 @@
 rootProject.name = 'keycloak-sso'
+
+include 'a-service'
+include 'b-service'

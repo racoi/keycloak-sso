@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: a-service
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: a-client
+            client-secret: M7jG1zFRdGaHxA0FhnFMyshcamlvW9mH
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8090/realms/myrealm
+
+server:
+  port: 8081
