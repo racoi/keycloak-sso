@@ -15,10 +15,18 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/login/**").permitAll()
+                .requestMatchers("/logout/**").permitAll()
                 .anyRequest().authenticated()
             )
             .oauth2Login(oauth2 -> oauth2
                 .defaultSuccessUrl("/", true)
+            )
+            .logout(logout -> logout
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("http://localhost:8090/realms/myrealm/protocol/openid-connect/logout?redirect_uri=http://localhost:8082/")
+                .invalidateHttpSession(true)
+                .clearAuthentication(true)
+                .deleteCookies("JSESSIONID")
             );
         
         return http.build();

@@ -8,9 +8,16 @@ spring:
           keycloak:
             client-id: a-client
             client-secret: M7jG1zFRdGaHxA0FhnFMyshcamlvW9mH
+            scope: openid,profile,email
         provider:
           keycloak:
             issuer-uri: http://localhost:8090/realms/myrealm
 
 server:
   port: 8081
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.boot.autoconfigure.security.oauth2.client: DEBUG
