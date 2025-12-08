@@ -7,7 +7,7 @@ spring:
         registration:
           keycloak:
             client-id: a-client
-            client-secret: M7jG1zFRdGaHxA0FhnFMyshcamlvW9mH
+            client-secret: PyDP9R2C3BsJvbF3hPOiRx2MK3SmXc0Z
             scope: openid,profile,email
         provider:
           keycloak:

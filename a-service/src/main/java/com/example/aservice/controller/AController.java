@@ -5,15 +5,16 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api")
 public class AController {
 
-    @GetMapping("/")
+    @GetMapping("/user")
     public Map<String, Object> home(@AuthenticationPrincipal OidcUser oidcUser,
                                   @RegisteredOAuth2AuthorizedClient("keycloak") OAuth2AuthorizedClient client) {
 
@@ -30,14 +31,6 @@ public class AController {
                 "idToken", idToken,
                 "accessToken", accessToken,
                 "refreshToken", refreshToken
-        );
-    }
-
-    @PostMapping("/logout")
-    public Map<String, String> logout() {
-        return Map.of(
-            "message", "Logout successful.",
-            "logoutUrl", "/logout"
         );
     }
 }
